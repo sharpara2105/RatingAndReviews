@@ -1,0 +1,11 @@
+<h1>Movies</h1>
+<div>
+    <h3><a href="/api/new-movie"> Add movie </a></h3>
+</div>
+
+<h3><a href="/api/ratings/list"> All ratings data</a> </h3>
+
+{{#each movie}}
+<h4><a href="/api/movies/{{this._id}}">{{this.title}}</a></h4>
+<small>{{this.genre}}</small>
+{{/each}}

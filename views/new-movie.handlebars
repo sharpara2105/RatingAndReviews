@@ -1,0 +1,22 @@
+<form method="POST" action="/api/movies">
+    <fieldset>
+        <legend>Add Movie</legend>
+        <!-- TITLE -->
+        <p>
+            <label for="title">Movie name</label><br>
+            <input type="text" name="title" />
+        <p>(Mandatory field and string length should be between 5 and 255)</p>
+        </p>
+        <p>
+            <label for="genre">Genre</label><br>
+            <input type="text" name="genre" />
+        <p>(Mandatory field and string length should be between 5 and 50)</p>
+        </p>
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type="submit">Add</button>
+    </p>
+
+</form>

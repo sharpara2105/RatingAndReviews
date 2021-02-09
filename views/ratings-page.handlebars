@@ -1,0 +1,36 @@
+{{#each movie}}
+<h1>{{this.title}}</h1>
+{{/each}}
+
+
+<form method="POST" action="/api/ratings/{{movie._id}}">
+    <fieldset>
+        <legend>Rate a Movie</legend>
+        <!-- TITLE -->
+        <p>
+            <label for="rating">Give a Rating:</label>
+            <select id="rating" name="rating">
+                <option value="1">1 star</option>
+                <option value="2">2 star</option>
+                <option value="3">3 star</option>
+                <option value="4">4 star</option>
+                <option value="5">5 star</option>
+            </select>
+        </p>
+        <p>
+            <label for="comment">comment</label><br>
+            <input type="text" name="comment" />
+        </p>
+        {{!-- <p>
+            <textarea id="message" rows="10" cols="60">
+                Type your comment here.
+                </textarea>
+        </p> --}}
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+</form>

@@ -1,0 +1,16 @@
+<table style="width:100%">
+    <tr>
+        <th style="text-align:left">UserId</th>
+        <th style="text-align:left">Movie Title</th>
+        <th style="text-align:left">Ratings</th>
+        <th style="text-align:left">comments</th>
+    </tr>
+    {{#each content}}
+    <tr>
+        <td>{{this.user}}</td>
+        <td>{{this.movieTitle}}</td>
+        <td>{{this.Ratings}}</td>
+        <td>{{this.comments}}</td>
+    </tr>
+    {{/each}}
+</table>
