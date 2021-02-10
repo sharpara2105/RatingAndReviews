@@ -16,7 +16,7 @@ const router = express.Router();
 //     res.render('PaginateMovies',{content});
 //   })
 // });
-router.get('/', async (req, res) => {
+router.get('/', auth,async (req, res) => {
   const movies = await Movie.find().sort('title').then(movie => {
     // console.log(movie)
     res.render('movies-list', { movie: movie});
@@ -26,7 +26,7 @@ console.log(err);
 });
 });
 
-router.post('/', async (req, res) => {
+router.post('/',auth, async (req, res) => {
   const { error } = validate(req.body); 
   if (error) return res.status(400).send(error.details[0].message);
 

@@ -1,11 +1,26 @@
 <h1>Movies</h1>
+<h5 style="background-color:lightyellow;">(Please add one or more movies to begin with by clicking on add movie)</h5>
 <div>
-    <h3><a href="/api/new-movie"> Add movie </a></h3>
+    <h3 style="text-align:center"><a href="/api/new-movie"> Add movie </a></h3>
+</div>
+<div>
+    <h3 style="text-align:center"><a href="/api/ratings/list"> All ratings data</a> </h3>
 </div>
 
-<h3><a href="/api/ratings/list"> All ratings data</a> </h3>
-
-{{#each movie}}
-<h4><a href="/api/movies/{{this._id}}">{{this.title}}</a></h4>
-<small>{{this.genre}}</small>
-{{/each}}
+<h5 style="background-color:powderblue;">(click on the movie title to rate a movie)</h5>
+<div>
+    <table style="width:100%">
+        <tr>
+            <th style="text-align:left">Movie Title</th>
+            <th style="text-align:left">Average Rating</th>
+            <th style="text-align:left">Total No. of Ratings</th>
+        </tr>
+        {{#each movie}}
+        <tr>
+            <td><a href="/api/movies/{{this._id}}">{{this.title}}</a></td>
+            <td>{{this.avgRating}}</td>
+            <td>{{this.totalRatings}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

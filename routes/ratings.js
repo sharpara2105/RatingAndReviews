@@ -33,8 +33,8 @@ router.post('/:id', auth,async (req, res) => {
   });
   rating = await rating.save();
 
-//   const usersCount = await Rating.find({movie:req.params.id}).count();
-//   console.log(usersCount);
+  
+
   movie.totalRatings++;
   movie.sumofRatings += parseInt(req.body.rating) ;
   movie.avgRating = Math.floor(movie.sumofRatings/movie.totalRatings);
@@ -42,13 +42,13 @@ router.post('/:id', auth,async (req, res) => {
 
 
 
-//   res.redirect('/');
-  res.send(rating);
+  res.render('success-page',{});
+  // res.send(rating);
 });
 
 
 
-router.get('/list', async (req, res) => {
+router.get('/list', auth,async (req, res) => {
   const page = parseInt(req.query.page)
   const limit = parseInt(req.query.limit)
   

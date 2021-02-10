@@ -8,6 +8,7 @@ const users = require('./routes/user');
 const home = require('./routes/home');
 const newuser = require('./routes/new-user');
 const newmovie = require('./routes/new-movie');
+const logout = require('./routes/logout');
 const express = require('express');
 const app = express();
 var exphbs = require('express-handlebars');
@@ -43,5 +44,9 @@ app.use('/api/movies',movies);
 app.use('/api/register',users);
 app.use('/api/register',users);
 app.use('/api/ratings',ratings);
+app.use('/api/logout',logout);
+
+
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

@@ -43,7 +43,6 @@ router.post('/',async(req,res) => {
     // res.send(token);
     localStorage.setItem('token',token);
     res.redirect('/api/register/me')
-    // console.log(localStorage.getItem('token'))
     // res.header('x-auth-token',token).send(_.pick(user,['_id','name','email','role']));
 });
 
