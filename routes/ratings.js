@@ -13,10 +13,9 @@ router.post('/:id', auth,async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message); 
 
   const movie = await Movie.findById(req.params.id);
-//   console.log(movie)
   if (!movie) return res.status(400).send('Invalid movie.');
   const movietitle = await Movie.findById(req.params.id).select({title:1})
-  // console.log(movietitle.title)
+ 
 
   // a user should only be able to rate the movie once
   const userCheck = await Rating.find({movie:req.params.id}).select({user:1})
@@ -40,10 +39,7 @@ router.post('/:id', auth,async (req, res) => {
   movie.avgRating = Math.floor(movie.sumofRatings/movie.totalRatings);
   movie.save();
 
-
-
   res.render('success-page',{});
-  // res.send(rating);
 });
 
 

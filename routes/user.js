@@ -12,7 +12,6 @@ const router = express.Router();
 router.get('/me',auth,async(req,res)=>{
     const user = await User.findById(req.user._id).select('email')
     res.render('userPage',{user})
-    // res.send(user);
 })
 
 
@@ -22,7 +21,6 @@ router.post('/',async(req,res) => {
 
     let user = await User.findOne({email : req.body.email});
     if(user) {
-        // res.status(400).send('already registered user');
         res.redirect('/api/register/me')
     }
 

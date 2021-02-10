@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-// const Joi = require('joi');
-// Joi.objectId=require('joi-objectid')(Joi);
 const config = require('config');
 const movies = require('./routes/movies');
 const ratings = require('./routes/ratings');
@@ -41,7 +39,6 @@ app.use('/',home);
 app.use('/api/new-user',newuser);
 app.use('/api/new-movie',newmovie);
 app.use('/api/movies',movies);
-app.use('/api/register',users);
 app.use('/api/register',users);
 app.use('/api/ratings',ratings);
 app.use('/api/logout',logout);

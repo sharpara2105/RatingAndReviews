@@ -18,7 +18,6 @@ const router = express.Router();
 // });
 router.get('/', auth,async (req, res) => {
   const movies = await Movie.find().sort('title').then(movie => {
-    // console.log(movie)
     res.render('movies-list', { movie: movie});
 })
 .catch(err => {
